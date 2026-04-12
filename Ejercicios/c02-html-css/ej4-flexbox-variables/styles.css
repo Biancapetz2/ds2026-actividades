@@ -1,0 +1,89 @@
+/* etiqueta */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+p {
+    line-height: 1.6;
+    color: #414a53;
+}
+
+h1 {
+    color: #c014ff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: cursive;
+}
+
+h2 {
+    color: #c014ff;
+    margin-top: 30px;
+    font-family: cursive;
+}
+
+h3 {
+    color: #c014ff;
+    margin-top: 20px;
+    font-family: cursive;
+}
+/* Clase */
+.titulo {
+    color: #d45cff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffa9ef;
+}
+:root {
+    --color-principal: #2c3e50;
+    --color-secundario: #2980b9;
+    --sombra: rgba(0, 0, 0, 0.2);
+    --fuente-base: "Arial", sans-serif;
+    --radio-borde: 10px;
+}
+body{    
+    font-family: var(--fuente-base);
+}
+* {
+    box-sizing: border-box;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card {
+    background-color: white;
+    border-radius: var(--radio-borde);
+    color: var(--color-principal);
+    box-shadow: 0 4px 6px var(--sombra);
+    padding: 15px;
+    flex: 1;
+}
+.item {
+    border-radius: var(--radio-borde);
+    box-shadow: 0 4px 6px var(--sombra);
+}
