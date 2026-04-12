@@ -1,0 +1,51 @@
+/* etiqueta */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+p {
+    line-height: 1.6;
+    color: #414a53;
+}
+
+h1 {
+    color: #c014ff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: cursive;
+}
+
+h2 {
+    color: #c014ff;
+    margin-top: 30px;
+    font-family: cursive;
+}
+
+h3 {
+    color: #c014ff;
+    margin-top: 20px;
+    font-family: cursive;
+}
+/* Clase */
+.titulo {
+    color: #d45cff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffa9ef;
+}
