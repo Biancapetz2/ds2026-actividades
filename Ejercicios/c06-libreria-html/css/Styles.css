@@ -10,3 +10,29 @@
   object-fit: cover;
 }
 
+section.container {
+  background-color: #f8f9fa; 
+  border-radius: 10px;
+  padding: 40px;
+}
+
+section.container img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+section.container h2 {
+  color: #2c3e50;
+}
+
+section.container h5 {
+  color: #6c757d;
+}
+
+section.container .btn-success {
+  transition: transform 0.2s ease;
+}
+
+section.container .btn-success:hover {
+  transform: scale(1.05);
+}
