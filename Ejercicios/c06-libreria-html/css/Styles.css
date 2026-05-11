@@ -1,0 +1,12 @@
+.Hero {
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.card img {
+  height: 400px;
+  object-fit: cover;
+}
+
