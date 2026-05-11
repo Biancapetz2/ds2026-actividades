@@ -36,6 +36,29 @@
     </div>
   </div>
 </nav>
+<form>
+  <div class="mb-3">
+    <label for="InputName" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="InputName" required>
+  </div>
+  <div class="mb-3">
+    <label for="InputEmail" class="form-label">Correo electrónico</label>
+    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" required>
+  </div>
+  <div class="mb-3">
+    <label for="InputAsunto" class="form-label">Asunto</label>
+    <select class="form-select" aria-label="Default select example">
+  <option selected>Consulta sobre un libro</option>
+  <option value="1">Reclamo sobre un libro</option>
+  <option value="2">Sugerencia para la librería</option>
+</select>
+  </div>
+  <div class="mb-3">
+    <label for="InputMensaje" class="form-label">Mensaje</label>
+    <input type="text" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/data.js"></script>
 </body>

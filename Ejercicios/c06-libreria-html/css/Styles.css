@@ -36,3 +36,12 @@ section.container .btn-success {
 section.container .btn-success:hover {
   transform: scale(1.05);
 }
+
+form {
+  max-width: 900px;
+  margin: auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+}
