@@ -1,0 +1,80 @@
+.hero {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-btn {
+  font-size: 1rem;
+  padding: 0.7rem 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+body {
+  background-color: #f4f4f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-custom {
+  margin-bottom: 2rem;
+}
+
+.footer-custom {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+}
+
+.titulo-home {
+  text-align: center;
+  margin: 2rem 0;
+  color: #2c3e50;
+}
+
+.contenedor-libros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.libro-card {
+  width: 18rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.libro-card:hover {
+  transform: scale(1.05);
+}
+
+.libro-img {
+  height: 250px;
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+  border-bottom: 1px solid #ddd;
+}
