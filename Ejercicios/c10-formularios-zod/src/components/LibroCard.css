@@ -1,0 +1,19 @@
+.libro-card {
+  width: 18rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.libro-card:hover {
+  transform: scale(1.05);
+}
+
+.libro-img {
+  height: 250px;
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+  border-bottom: 1px solid #ddd;
+}
+
+.button {
+  margin-left: 10px;
+}

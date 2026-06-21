@@ -1,0 +1,23 @@
+.hero {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+#ver-catalogo {
+  font-size: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #0044ff;
+  border: none;
+}

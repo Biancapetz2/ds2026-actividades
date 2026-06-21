@@ -1,0 +1,26 @@
+.nav-links {
+  display: flex;
+  gap: 1.5rem; /* separación entre links */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.navbar-custom {
+  margin-bottom: 2rem;
+}
+
+.footer-custom {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+}
