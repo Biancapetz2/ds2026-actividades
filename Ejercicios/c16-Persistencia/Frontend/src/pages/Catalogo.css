@@ -1,0 +1,5 @@
+.boton {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  margin: 1rem 0; /* opcional, espacio arriba/abajo */
+}
