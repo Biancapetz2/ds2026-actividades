@@ -1,4 +1,5 @@
 import { prisma } from "../src/config/prisma";
+import bcrypt from "bcrypt";
 
 const autores = [
   { "nombre": "Antoine de Saint-Exupéry", "nacionalidad": "Francia" },
@@ -57,6 +58,13 @@ const libros =[
     "disponible": false
   }
 ];
+const usuarios = [
+ { email: "admin@libreria.test", nombre: "Admin", rol: "ADMIN" as
+const, password: "Admin1234" },
+ { email: "cliente@libreria.test", nombre: "Cliente", rol: "CLIENTE" as
+const, password: "Cliente1234" },
+];
+
 
 
 async function main() {
@@ -70,6 +78,13 @@ async function main() {
         categorias: { connect: cats.map(nombre => ({ nombre })) },
       } });
     }
+    for (const { password, ...datos } of usuarios) { // el password se saca del
+ await prisma.usuario.upsert({
+ where: { email: datos.email }, // upsert = idempotente: corré dos veces
+ update: {},
+ create: { ...datos, passwordHash: await bcrypt.hash(password, 10) },
+ });
+}
   }
 }
 main()
