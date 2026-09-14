@@ -31,3 +31,16 @@ model Categoría {
   nombre String @unique
   libros Libro[]
 }
+
+enum Rol {
+ ADMIN
+ CLIENTE
+}
+model Usuario {
+ id Int @id @default(autoincrement())
+ email String @unique // ← @unique: sin cuentas con el mismo mail
+ passwordHash String // ← el NOMBRE avisa qué se guarda acá
+ nombre String
+ rol Rol @default(CLIENTE) // ← nadie se registra como admin
+ creadoEn DateTime @default(now())
+}
