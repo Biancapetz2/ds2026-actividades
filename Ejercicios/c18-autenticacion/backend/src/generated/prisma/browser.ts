@@ -32,3 +32,8 @@ export type Autor = Prisma.AutorModel
  * 
  */
 export type Categoría = Prisma.CategoríaModel
+/**
+ * Model Usuario
+ * 
+ */
+export type Usuario = Prisma.UsuarioModel
