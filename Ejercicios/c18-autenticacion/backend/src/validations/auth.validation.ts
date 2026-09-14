@@ -1,4 +1,5 @@
 import { z } from "zod";
+
 const email = z.string().trim().toLowerCase ().pipe(z.email("Email inválido" ));
 export const registroSchema = z.object({
  nombre: z.string().trim().min(1, "El nombre es obligatorio" ).max(100),
@@ -10,5 +11,8 @@ export const registroSchema = z.object({
 });
 export const loginSchema = z.object({
  email,
- password: z.string().min(1, "La contraseña es obligatoria" ),
+ password: z.string().min(1, "La contraseña es obligatoria" ), // ← acá NO se validafortaleza
 });
+
+export type Registro = z.infer<typeof registroSchema>;
+export type Login    = z.infer<typeof loginSchema>;
