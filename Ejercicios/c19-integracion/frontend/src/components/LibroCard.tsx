@@ -1,37 +1,32 @@
-import React, { useState } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import '../assets/styles/LibroCard.css';
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import type { LibroCardProps } from '../types/Libro';
-import {Link} from 'react-router-dom';
-import './LibroCard.css';
 
-function LibroCard({ id, titulo, autor, precio, imagen, disponible }: LibroCardProps) {
+function LibroCard({ titulo, autor, precio, imagen, disponible }: LibroCardProps) {
   const [disponibilidad, setDisponibilidad] = useState<boolean>(disponible);
-  const [likes, setLikes] = React.useState<number>(0);
   return (
-    <Card className="libro-card">
-      <Card.Img variant="top" src={imagen} alt={titulo} className="libro-img" />
-      {!disponibilidad ? <p className="false">Alquilado</p> : <p className="true">Disponible</p>}
+    <Card style={{ width: '18rem' }}>
+      <div className="libro-img-div">
+        <Card.Img variant="top" src={imagen} className="libro-img" />
+        {!disponibilidad ? <p className="false">Alquilado</p> : <p className="true">Disponible</p>}
+      </div>
       <Card.Body>
         <Card.Title>{titulo}</Card.Title>
-        <Card.Text>{autor}</Card.Text>
-        <Card.Text>Precio: ${precio}</Card.Text>
-        <Button 
-          variant="primary"
-          className="cambiar-estado"
+        <Card.Text>
+          <div className="autor">{autor.nombre}</div>
+          <span className="precio">${precio}</span>
+        </Card.Text>
+        <div className="d-flex gap-2">
+          <Button 
+            variant="primary"
+            className="cambiar-estado"
             onClick={() => setDisponibilidad(!disponibilidad)}
           >
             {disponibilidad ? 'Alquilar' : 'Devolver'}
-        </Button>
-        <Button variant="primary" onClick={() => setLikes(likes + 1)}>
-          ❤️ {likes} Me gusta
-        </Button>
-       <Button
-          as={Link as any}
-          to={`/catalogo/${id}`}
-          variant="outline-primary"
-        >
-          Ver más
-        </Button>
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   );

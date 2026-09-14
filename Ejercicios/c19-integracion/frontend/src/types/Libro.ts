@@ -1,10 +1,14 @@
-type LibroCardProps = {
+export interface LibroCardProps {
   id: number;
   titulo: string;
-  autor: string;
+  autorId: number;
+  autor: Autor;
   precio: number;
   imagen: string;
   disponible: boolean;
-};
-
-export type { LibroCardProps };
+}
+export interface Autor { 
+  id: number; 
+  nombre: string; 
+  nacionalidad: string 
+}
