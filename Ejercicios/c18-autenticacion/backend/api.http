@@ -56,3 +56,17 @@ POST {{baseUrl}}/api/autores
 DELETE {{baseUrl}}/api/autores/1
 ### 404 - actualizar algo que no existe
 PUT {{baseUrl}}/api/libros/9999
+### Registro
+POST {{baseUrl}}/api/auth/registro
+Content-Type: application/json
+{ "nombre": "Ana", "email": "ana@libreria.test", "password": "Libreria2026" }
+### Login ← el @name es lo que permite capturar la respuesta
+# @name login
+POST {{baseUrl}}/api/auth/login
+Content-Type: application/json
+{ "email": "ana@libreria.test", "password": "Libreria2026" }
+### Guardamos el token de la respuesta anterior
+@token = {{login.response.body.token}}
+### Ahora cualquier request protegido lo usa
+GET {{baseUrl}}/api/auth/yo
+Authorization: Bearer {{token}}
