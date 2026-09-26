@@ -11,10 +11,11 @@ import { useAuth } from '../../context/AuthContext';
 function NavBar() {
   const navigate = useNavigate();
 
-  const {
-    usuario,
-    logout,
-  } = useAuth();
+const {
+  usuario,
+  logout,
+  tieneRol,
+} = useAuth();
 
   const manejarSesion = () => {
     if (usuario) {
@@ -44,6 +45,12 @@ function NavBar() {
           <Nav.Link href="/catalogo">
             Catálogo
           </Nav.Link>
+
+          {tieneRol('ADMIN') && (
+          <Nav.Link href="/libros/nuevo">
+           Nuevo libro
+          </Nav.Link>
+            )}
 
           <Nav.Link href="#">
             Contacto
