@@ -64,6 +64,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     borrarToken();
     setUsuario(null);
   };
+  
+  useEffect(() => {
+  window.addEventListener('sesion-expirada', logout);
+
+  return () => {
+    window.removeEventListener('sesion-expirada', logout);
+  };
+}, []);
 
   const estaAutenticado = usuario !== null;
 
