@@ -1,7 +1,8 @@
 import { useParams, Link } from 'react-router-dom'
 import type { LibroCardProps } from '../types/Libro';
 
-type LibroDetalleProps = LibroCardProps & {
+type LibroDetalleProps = Omit<LibroCardProps, 'autor' | 'autorId'> & {
+  autor: string;
   descripcion: string;
 };
 

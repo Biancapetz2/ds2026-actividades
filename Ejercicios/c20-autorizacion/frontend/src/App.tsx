@@ -6,9 +6,11 @@ import Libros from './pages/Catalogo';
 import DetalleLibro from './pages/LibroDetalle';
 import Login from './pages/Login';
 import { BusquedaProvider } from './context/BusquedaContext';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
+    <AuthProvider>
     <BusquedaProvider>
       <Layout>
         <Routes>
@@ -20,6 +22,7 @@ function App() {
         </Routes>
       </Layout>
     </BusquedaProvider>
+    </AuthProvider>
   );
 }
 
