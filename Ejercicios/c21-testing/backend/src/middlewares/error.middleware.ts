@@ -1,0 +1,26 @@
+import { Request, Response, NextFunction } from "express";
+import { ZodError } from "zod";
+import { Prisma } from "../generated/prisma/client";
+
+export const errorHandler = (
+  err: unknown,
+  _req: Request,
+  res: Response,
+  _next: NextFunction
+) => {
+  console.error("ERROR REAL:", err);
+
+  if (err instanceof ZodError) {
+    return res.status(400).json({
+      error: "Datos inválidos",
+      detalles: err.issues.map(i => ({
+        campo: i.path.join("."),
+        mensaje: i.message,
+      })),
+    });
+  }
+
+  return res.status(500).json({
+    error: "Error interno del servidor",
+  });
+};

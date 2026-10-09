@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client"           // ← Prisma 7. NO "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  
+}
+
+model Libro {
+  id         Int     @id @default(autoincrement())
+  titulo     String
+  autor      Autor   @relation(fields: [autorId], references: [id])
+  autorId    Int     
+  precio     Int
+  imagen     String
+  disponible Boolean @default(true)
+  categorias Categoría[]
+}
+
+model Autor {
+  id           Int    @id @default(autoincrement())
+  nombre       String @unique
+  nacionalidad String
+  libros       Libro[]
+}
+
+model Categoría {
+  id   Int    @id @default(autoincrement())
+  nombre String @unique
+  libros Libro[]
+}
+
+enum Rol {
+ ADMIN
+ CLIENTE
+}
+model Usuario {
+ id Int @id @default(autoincrement())
+ email String @unique // ← @unique: sin cuentas con el mismo mail
+ passwordHash String // ← el NOMBRE avisa qué se guarda acá
+ nombre String
+ rol Rol @default(CLIENTE) // ← nadie se registra como admin
+ creadoEn DateTime @default(now())
+}
