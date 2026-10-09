@@ -16,3 +16,10 @@ export interface Credenciales {
   email: string;
   password: string;
 }
+
+export type UsuarioPublico = Usuario;
+
+export interface PayloadToken {
+  id: number;
+  rol: Rol;
+}
