@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import type { LibroCardProps } from '../types/Libro';
+import { formatearPrecio } from "../utils/formatearPrecio";
 
 function LibroCard({ titulo, autor, precio, imagen, disponible }: LibroCardProps) {
   const [disponibilidad, setDisponibilidad] = useState<boolean>(disponible);
@@ -16,7 +17,7 @@ function LibroCard({ titulo, autor, precio, imagen, disponible }: LibroCardProps
         <Card.Title>{titulo}</Card.Title>
         <Card.Text>
           <div className="autor">{autor.nombre}</div>
-          <span className="precio">${precio}</span>
+          <span className="precio">{formatearPrecio(precio)}</span>
         </Card.Text>
         <div className="d-flex gap-2">
           <Button 
